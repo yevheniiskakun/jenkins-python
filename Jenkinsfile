@@ -12,11 +12,15 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
+                sh '''
+                python3 helloworld.py
+                '''
             }
         }
         stage('Deploy') {
